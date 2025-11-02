@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Navbar } from "./components/navbar"
 import { ScrollProgress } from "./components/ScrollProgress"
 import LoadingScreen from "./components/LoadingScreen"
@@ -25,6 +25,20 @@ function App() {
   const handleLoadComplete = () => {
     setIsLoading(false)
   }
+
+  useEffect(() => {
+    if (!isLoading && isHomePage) {
+      const hash = window.location.hash
+      if (hash) {
+        setTimeout(() => {
+          const element = document.querySelector(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      }
+    }
+  }, [isLoading, isHomePage])
 
   return (
     <div>
