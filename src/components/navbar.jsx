@@ -42,7 +42,7 @@ export const Navbar = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
             </a>
             <a
-              href="/#blog"
+              href="/#updates"
               className="text-black hover:text-gray-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
             >
               UPDATES
